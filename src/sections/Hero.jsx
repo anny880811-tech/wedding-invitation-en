@@ -9,7 +9,7 @@ const Hero = () => {
         <h1 className="title">韋昊良 ＆ 呂易庭</h1>
         <h1 className="title-b">Beni & Yiting</h1>
         {/* <div className="section-title">A Note From Us</div> */}
-        <h3 className="section-header">A Note From Us</h3>
+        <h3 className="section-header hero-section-header">A Note From Us</h3>
         {/* <h3 className="section-header">我們想說</h3> */}
         <div className="section-heading__divider"></div>
         <div className="section-content">

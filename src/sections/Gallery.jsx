@@ -20,8 +20,9 @@ const Gallery = () => {
   const slides = photos.map(src => ({ src }))
   return (<>
     <div className="gallery-custom">
-      <div className="section-title">MOMENTS OF US</div>
-      <h3 className="section-header">屬於我們的片刻</h3>
+      {/* <div className="section-title">MOMENTS OF US</div> */}
+      <h3 className="section-header">MOMENTS OF US</h3>
+      {/* <h3 className="section-header">屬於我們的片刻</h3> */}
       <div className="section-heading__divider"></div>
       <div className="photo-group">
         <div className="photo-mixed-group">

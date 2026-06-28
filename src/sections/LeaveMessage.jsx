@@ -52,26 +52,27 @@ const LeaveMessage = () => {
 
   return (<>
     <div className="leaveMessage-custom">
-      <div className="section-title">Leave a Message</div>
-      <h3 className="section-header">自由留言板</h3>
+      {/* <div className="section-title">Leave a Message</div> */}
+      <h3 className="section-header">Leave a Message</h3>
+      {/* <h3 className="section-header">自由留言板</h3> */}
       <div className="section-heading__divider"></div>
       <div className="wish-container">
         <div>
-          <h5>{wishData.length}則留言</h5>
+          <h5>{wishData.length} Comments</h5>
         </div>
         <div className="wish-input-group">
           <input type="text"
             name=""
             value={form.name}
             className="name"
-            placeholder="名字 Name"
+            placeholder="Name"
             onChange={e => setForm(prev => ({ ...prev, name: e.target.value }))}
           />
           <textarea type="text"
             name=""
             value={form.wishes}
             className="wishes"
-            placeholder="留下您想說的話 Leave your message..."
+            placeholder="Leave your message..."
             onChange={e => setForm(prev => ({ ...prev, wishes: e.target.value }))}
           />
         </div>
@@ -79,7 +80,7 @@ const LeaveMessage = () => {
           className="wish-btn"
           onClick={handleSubmit}
           disabled={isSubmitting || !form.name.trim() || !form.wishes.trim()}>
-          {isSubmitting ? '送出中 Sending...' : '送出 Send'}
+          {isSubmitting ? 'Sending...' : 'Send'}
         </button>
       </div>
       <div>

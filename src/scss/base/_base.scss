@@ -55,7 +55,7 @@ p,
 label {
   font-size: 1rem;
   line-height: 1.8;
-  font-family:$font-en-body,$font-zh-sans;
+  font-family: $font-en-body, $font-zh-sans;
 }
 
 label {
@@ -106,7 +106,8 @@ textarea {
 .color-sage {
   background-color: $color-sage;
 }
-.color-blue{
+
+.color-blue {
   background-color: $color-blue;
 }
 
@@ -161,15 +162,18 @@ textarea {
   position: relative;
   font-family: $font-en-serif;
   // font-size: 28px;
-  // color: $color-slate-blue;
+  color: $color-slate-blue;
   font-weight: 500;
   letter-spacing: 0.1em;
   line-height: 1.2;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 24px;
-  color: $color-burgundy;
   margin-top: 1rem;
+}
+
+.hero-section-header {
+  color: $color-burgundy;
 }
 
 .section-header-dark {
@@ -181,7 +185,11 @@ textarea {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: $color-ivory;
-  font-size: 20px;
+  font-size: 16px;
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
 }
 
 .section-heading__divider {
@@ -275,7 +283,8 @@ i {
   i {
     color: $color-gold;
   }
-  label{
-    font-family:$font-en-body,$font-zh-sans;
+
+  label {
+    font-family: $font-en-body, $font-zh-sans;
   }
 }

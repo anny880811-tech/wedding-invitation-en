@@ -42,7 +42,7 @@ const WeddingInfo = () => {
               <p className="card-primary gold-text">{item.value}</p>
               <p>{item.description}</p>
               {item.mapUrl && <a href={item.mapUrl} target="_blank" rel="noreferrer" className="map-link">
-                查看地圖 <i className="bi bi-chevron-right"></i>
+                View Map <i className="bi bi-chevron-right"></i>
               </a>}
             </div>
             {item.illustration && (<div className="card-illustration">

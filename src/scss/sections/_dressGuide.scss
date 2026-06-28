@@ -3,15 +3,21 @@
   padding: 2rem 1.5rem 2rem 1.5rem;
   box-sizing: border-box;
   background-color: $color-ivory;
-  
+
 
   .color-container {
     margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2rem;
+    gap: 1.1rem;
     justify-content: center;
     font-family: $font-zh-sans;
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .colorChart {
       height: 40px;
@@ -20,7 +26,8 @@
       margin-bottom: 0.5rem;
       box-shadow: 3px 3px 8px rgba(49, 51, 44, 0.5);
     }
-    .title{
+
+    .title {
       font-size: 13px;
     }
   }
