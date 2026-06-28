@@ -21,7 +21,7 @@ function App() {
   const audioRef = useRef(null)
   const { guestId } = useParams()
   const guestName = guestId ? guestList[guestId] : null
-  const displayName = guestName ?? '家人朋友'
+  const displayName = guestName ?? 'Dear Family and Friends'
   const handleOpen = () => {
     setIsOpen(true)
     setPlaying(true)
@@ -76,10 +76,10 @@ function App() {
           {coverReady && (<>
             <Hero />
             <WeddingInfo />
-            <WeddingHospitality />
+            {/* <WeddingHospitality /> */}
             <Gallery />
             <RSVP />
-            <TravelGuide />
+            {/* <TravelGuide /> */}
             <DressGuide />
             <LeaveMessage />
             <Footer />

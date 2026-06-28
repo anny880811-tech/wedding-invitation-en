@@ -159,25 +159,29 @@ textarea {
 
 .section-header {
   position: relative;
-  font-family: $font-zh-serif;
-  font-size: 28px;
+  font-family: $font-en-serif;
+  // font-size: 28px;
+  // color: $color-slate-blue;
   font-weight: 500;
   letter-spacing: 0.1em;
   line-height: 1.2;
   margin-bottom: 1rem;
   text-align: center;
-  color: $color-slate-blue;
+  font-size: 24px;
+  color: $color-burgundy;
+  margin-top: 1rem;
 }
 
 .section-header-dark {
   position: relative;
-  font-family: $font-zh-serif;
-  font-size: 28px;
+  font-family: $font-en-serif;
+  // font-size: 28px;
   font-weight: 500;
   letter-spacing: 0.1em;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: $color-ivory;
+  font-size: 20px;
 }
 
 .section-heading__divider {
