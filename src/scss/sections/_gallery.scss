@@ -1,0 +1,83 @@
+.gallery-custom {
+  width: 100%;
+  padding: 3rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  background-image:
+    url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: $color-ivory;
+
+  .photo-group {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+
+    .photo-s-group {
+      gap: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+
+      .photo-s-container {
+        flex: 1;
+        aspect-ratio: 1/1;
+        border-radius: 1rem;
+        // background-color: rgb(188, 177, 167);
+
+        .photo-s {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: opacity 0.3s ease;
+        }
+      }
+    }
+
+    .photo-mixed-group {
+      display: flex;
+      gap: 0.8rem;
+      align-items: stretch;
+
+      .photo-landscape-container {
+        flex: 1.2; // 橫式佔比較寬
+        aspect-ratio: 4/3;
+        border-radius: 1rem;
+        // background-color: rgb(188, 177, 167);
+      }
+
+      .photo-portrait-container {
+        flex: 0.8; // 直式佔比較窄
+        aspect-ratio: 3/4;
+        border-radius: 1rem;
+        // background-color: rgb(188, 177, 167);
+      }
+
+      .photo-landscape-container,
+      .photo-portrait-container {
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: rgba(255, 180, 100, 0.08);
+          pointer-events: none;
+        }
+
+        .photo-s {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.yarl__root {
+  --yarl__color_backdrop: rgba(244, 239, 234, 0.95);
+}

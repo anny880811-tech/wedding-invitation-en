@@ -1,0 +1,229 @@
+.invitation-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 1.2s ease-in;
+  background-color: $color-ivory;
+
+  // 滑出動畫
+  &.slide-up {
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  // 桌機版中央文字區塊
+  .cover-text--desktop {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: contents;
+
+
+      // 文字區塊放上方
+      .cover-text__names {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        line-height: 1;
+
+        h1.title {
+          color: $color-ivory;
+          font-size: 2.8rem;
+          font-weight: 400;
+          letter-spacing: 0.08em;
+          line-height: 1;
+          margin: 0;
+        }
+
+        p {
+          color: $color-ivory;
+          font-size: 1.4rem;
+          letter-spacing: 3px;
+          margin-top: 0.1rem;
+          line-height: 1;
+        }
+      }
+
+      // 按鈕放下方
+      .cover-btn-desktop {
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        h2,
+        h4 {
+          color: $color-ivory;
+        }
+        h4{
+          letter-spacing: 0.15em;
+        }
+      }
+    }
+
+    h5 {
+      font-size: 1.1rem;
+      letter-spacing: 4px;
+      color: $color-ivory;
+      margin-bottom: 0.5rem;
+    }
+
+    h1.title {
+      color: $color-ivory;
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+    }
+
+    p {
+      color: $color-ivory;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      margin-top: 0.5rem;
+      line-height: 1;
+    }
+
+    .cover-guest {
+      margin-top: 1.5rem;
+
+      &__label {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        color: $color-ivory;
+        opacity: 0.85;
+        margin: 0;
+      }
+
+      &__name {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $color-ivory;
+        letter-spacing: 0.1em;
+        margin: 0.2rem 0 0;
+      }
+    }
+  }
+
+  // ✅ 新增背景圖片樣式
+  .cover-bg {
+    position: absolute;
+    top: 0;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.is-loaded {
+      opacity: 1;
+    }
+  }
+
+  // ✅ 新增 gradient 疊加層（補回原本的 linear-gradient 效果）
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    // background: linear-gradient(rgba(255, 200, 150, 0.06), rgba(255, 200, 150, 0.06));
+    background: linear-gradient(
+      to bottom, 
+      rgba(220, 181, 126, 0) 0%, 
+      rgba(220, 181, 126, 0) 40%, 
+      rgba(0, 0, 0, 0.45) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .cover-text {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    white-space: nowrap;
+    display: inline-block;
+
+    @media (min-width: 1024px) {
+      display: none;
+      top: 15%;
+    }
+
+    h1 {
+      line-height: 1;
+      font-weight: 400;
+      color: $color-ivory;
+      letter-spacing: .08em;
+    }
+  }
+
+  .cover-btn-wrapper {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    white-space: nowrap;
+    display: inline-block;
+
+    @media (min-width: 1024px) {
+      display: none;
+      bottom: 25%;
+    }
+
+    h2 {
+      color: $color-ivory;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      line-height: 0.8;
+    }
+
+    h4 {
+      color: $color-ivory;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  h5 {
+    color: $color-ivory;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    @media(min-width: 1024px) {
+      font-size: 1.1rem;
+      letter-spacing: 4px;
+    }
+  }
+
+  p {
+    color: $color-ivory;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 0.5;
+    margin: 0;
+    margin-top: 0.5rem;
+
+    @media(min-width: 1024px) {
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+    }
+  }
+}

@@ -1,0 +1,277 @@
+html,
+body {
+  margin: 0;
+  background-image:
+    linear-gradient(rgba($color-ivory, 0.6), rgba($color-ivory, 0.6)),
+    url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: $color-charcoal;
+  overflow-x: hidden;
+  font-family: $font-en-body, $font-zh-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-family: $font-en-serif, $font-zh-serif;
+  color: $color-slate-blue;
+  margin: 0;
+}
+
+h5,
+p {
+  color: $color-charcoal;
+  margin: 0;
+}
+
+
+h5 {
+  font-size: 1.125rem;
+  /* 手機端：稍微大於內文，約 18px */
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+    /* 平板端：約 20px */
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+    /* 桌機端：約 24px */
+  }
+}
+
+a,
+p,
+label {
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family:$font-en-body,$font-zh-sans;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  background-color: $color-ivory;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+select {
+  width: 100%;
+  height: 2rem;
+  background-color: $color-ivory;
+  border: none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: $color-ivory;
+  border: none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.color-ivory {
+  background-color: $color-ivory;
+}
+
+.color-mist-blue {
+  background-color: $color-mist-blue;
+}
+
+.color-burgundy {
+  background-color: $color-burgundy;
+}
+
+.color-sage {
+  background-color: $color-sage;
+}
+.color-blue{
+  background-color: $color-blue;
+}
+
+.content-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.section-title {
+  color: $color-burgundy;
+  font-family: $font-en-title;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.gold-text {
+  background: linear-gradient(120deg,
+      #fff6c7 0%,
+      #d4af37 25%,
+      #b8891a 50%,
+      #ffe9a3 75%,
+      #d4af37 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.section-title-dark {
+  color: $color-gold;
+  font-family: $font-en-title;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.section-header {
+  position: relative;
+  font-family: $font-zh-serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: $color-slate-blue;
+}
+
+.section-header-dark {
+  position: relative;
+  font-family: $font-zh-serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $color-ivory;
+}
+
+.section-heading__divider {
+  position: relative;
+
+  width: 56px;
+  height: 1px;
+
+  margin: 0 auto 0;
+
+  background: rgba($color-burgundy, 0.5);
+}
+
+.section-heading__divider::before,
+.section-heading__divider::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: rgba($color-burgundy, 0.5);
+
+  transform: translateY(-50%);
+}
+
+.section-heading__divider::before {
+  left: -8px;
+}
+
+.section-heading__divider::after {
+  right: -8px;
+}
+
+.section-content {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+
+
+.icon-circle {
+  width: 65px;
+  height: 65px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.warn {
+  font-weight: 600;
+  font-size: 1.2rem;
+  // background-color: $color-ivory;
+  // padding: 0.1rem 1rem;
+  color: $color-ivory;
+}
+
+.en {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-family: $font-en-body;
+}
+
+i {
+  font-size: 1.8rem;
+  color: $color-ivory;
+}
+
+.dark-section {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-ivory;
+  }
+
+  p,
+  label {
+    color: $color-gold;
+  }
+
+  i {
+    color: $color-gold;
+  }
+  label{
+    font-family:$font-en-body,$font-zh-sans;
+  }
+}

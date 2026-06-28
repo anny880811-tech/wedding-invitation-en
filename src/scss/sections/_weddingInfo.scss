@@ -1,0 +1,205 @@
+.weddingInfo-custom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4rem 2rem;
+  background-image:
+    url('https://images.unsplash.com/photo-1645654731316-a350fdcf3bae?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  margin-bottom: -2px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: $color-midnight;
+  padding-bottom: calc(4rem + 2px); // 補回來讓內容不移位
+  position: relative;
+  z-index: 1; // 確保自己蓋在下一個 section 上方
+  overflow-x: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, $color-midnight);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .section-title-dark,
+  .section-header-dark {
+    position: relative;
+    z-index: 3;
+  }
+
+  .section-content {
+    position: relative;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    z-index: 1;
+    padding: 1.5rem 0 0 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 0.5rem;
+      padding: 1px;
+      background: linear-gradient(135deg,
+          #b8922a 0%,
+          #f5e090 25%,
+          #c9a84c 45%,
+          #fff8c0 55%,
+          #b8922a 75%,
+          #f0d060 100%);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .flower-edge {
+      position: absolute;
+      left: 49%; // 水平置中
+      width: 150px; // 依花卉素材寬度調整
+      height: auto;
+      pointer-events: none;
+      z-index: 2; // 壓在金邊線 (::before) 上方
+    }
+
+    .flower-center {
+      top: -35px; // 💡 調整這個負值，直到花卉中心點剛好切齊上邊框線
+      transform: translateX(-50%); // 修正置中偏移（不旋轉，維持原本樣式）
+    }
+
+
+    .introduce-container {
+      padding: 0.5rem 1.5rem 2.5rem 1.5rem;
+
+      .accordion-button {
+        background-image:
+          url('https://images.unsplash.com/photo-1645654731316-a350fdcf3bae?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-position: center center;
+        background-blend-mode: multiply;
+        background-color: $color-midnight;
+        color: $color-gold;
+
+        // 展開時的樣式
+        &:not(.collapsed) {
+          background-color: $color-midnight;
+          color: $color-ivory;
+          box-shadow: none;
+        }
+
+        // 移除 focus 藍框
+        &:focus {
+          box-shadow: none;
+        }
+
+        // 箭頭顏色（SVG filter 或直接換圖）
+        &::after {
+          filter: invert(1); // 讓預設箭頭變白/淺色
+        }
+      }
+
+      .accordion-item {
+        background-color: $color-midnight;
+        border-color: $color-gold;
+      }
+
+      .accordion-body {
+        background-image:
+          url('https://images.unsplash.com/photo-1645654731316-a350fdcf3bae?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-position: center center;
+        background-blend-mode: multiply;
+        background-color: $color-midnight;
+        color: $color-ivory;
+      }
+    }
+    // div {
+    //   margin-bottom: 1rem;
+    // }
+  }
+
+
+  .infoCard {
+    position: relative;
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    h3,
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+
+    .card-icon {
+      width: 65px;
+      flex-shrink: 0;
+      margin-right: 1.5rem;
+    }
+
+    .card-content {
+      flex: 1;
+      text-align: start;
+      color: $color-gold;
+
+
+      .card-title {
+        margin-bottom: 0.3rem;
+      }
+
+      .map-link {
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 0.5rem;
+        background-color: $color-ivory;
+        font-size: 1rem;
+        color: $color-midnight;
+        padding: 0.3rem 1rem 0.3rem 1.8rem;
+        border: none;
+        border-radius: 1.6rem;
+        display: inline-block;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: #f2e3b3;
+        }
+
+        i {
+          font-size: 1rem;
+        }
+      }
+
+      p {
+        font-family: $font-en-body, $font-zh-sans;
+      }
+    }
+  }
+
+  .anti-line-tape {
+    position: absolute;
+    left: 0;
+    bottom: -2px; // 故意往下探 2 像素
+    width: 100%;
+    height: 4px; // 給它 4px 的厚度
+    background-color: #0b1528 !important; // 💡 這裡直接寫死你的 $color-midnight 實色（例如 #0b1528）
+    background-image: none !important; // 絕對不要有任何背景圖
+    background-blend-mode: normal !important; // 關閉混色
+    z-index: 99; // 確保它在最上層，當一條完美的遮瑕膠帶
+    pointer-events: none;
+  }
+}

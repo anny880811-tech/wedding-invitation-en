@@ -1,0 +1,105 @@
+.hospitality-custom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  background-image:
+    url('https://images.unsplash.com/photo-1645654731316-a350fdcf3bae?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: $color-midnight;
+  margin-top: -2px;
+
+  .icon-circle svg {
+    stroke: url(#goldGradient);
+    color: transparent;
+  }
+
+
+  .section-content {
+    position: relative;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1.2rem 0 0 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 0.5rem;
+      padding: 1px;
+      background: linear-gradient(135deg,
+          #b8922a 0%,
+          #f5e090 25%,
+          #c9a84c 45%,
+          #fff8c0 55%,
+          #b8922a 75%,
+          #f0d060 100%);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .flower-edge {
+      position: absolute;
+      left: 48%; // 水平置中
+      width: 150px; // 依花卉素材寬度調整
+      height: auto;
+      pointer-events: none;
+      z-index: 2; // 壓在金邊線 (::before) 上方
+    }
+
+    .flower-center {
+      top: -35px; // 💡 調整這個負值，直到花卉中心點剛好切齊上邊框線
+      transform: translateX(-50%); // 修正置中偏移（不旋轉，維持原本樣式）
+    }
+
+  }
+
+
+  .infoCard {
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    // background-color: rgb(250, 249, 247);
+    // border-radius: 2rem;
+    // box-shadow: 3px 5px 10px rgba(109, 128, 138, 0.08);
+
+    h3,
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .card-icon {
+      width: 65px;
+      flex-shrink: 0;
+      margin-right: 1.5rem;
+    }
+
+    .card-content {
+      flex: 1;
+      text-align: start;
+
+      .card-spacer {
+        height: 0.5rem;
+      }
+
+      .card-title {
+        margin-bottom: 0.3rem;
+      }
+      p{
+         font-family: $font-en-body,$font-zh-sans;
+      }
+    }
+  }
+}

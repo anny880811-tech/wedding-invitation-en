@@ -1,0 +1,378 @@
+// ── 確認 Modal ──────────────────────────────────────
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 21, 40, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-box {
+  background: #fdf6f0;
+  border-radius: 16px;
+  padding: 32px 24px 24px 28px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto; 
+  box-shadow: 0 20px 60px rgba(11, 21, 40, 0.3);
+
+  // scrollbar 不貼邊
+  scrollbar-gutter: stable;     // 保留 scrollbar 空間，避免版面跳動
+  padding-right: 8px;           // scrollbar 和內容之間的距離
+  
+  // 樣式（選用）
+  scrollbar-width: thin;
+  scrollbar-color: rgba($color-burgundy, 0.3) transparent;
+}
+
+.modal-title {
+  font-size: 18px;
+  color: $color-midnight;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.modal-subtitle {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  
+
+  td {
+    padding: 8px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(128, 0, 32, 0.08);
+    color: $color-midnight;
+    word-break: break-word; 
+
+    &:first-child {
+      white-space: nowrap;
+      color: $color-burgundy;
+      font-weight: 500;
+      width: 80px;
+      min-width: 80px; 
+    }
+  }
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+
+  .modal-btn {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &.cancel {
+      background: transparent;
+      border: 1.5px solid $color-burgundy;
+      color: $color-burgundy;
+    }
+
+    &.confirm {
+      background: $color-burgundy;
+      color: #fff;
+    }
+
+    .en {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+  }
+}
+
+// ── 送出成功頁 ──────────────────────────────────────
+.submitted-message {
+  text-align: center;
+  padding: 30px 24px;
+  color: $color-midnight;
+
+  h4 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 0.8;
+    color: #555;
+
+    &.en {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.3;
+    }
+  }
+}
+
+.RSVP-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  background-image:
+    url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: $color-ivory;
+
+  input {
+    height: 1.8rem;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+  }
+
+  .form-container {
+    width: 100%;
+    margin-top: 1rem;
+
+    .remind {
+      text-align: center;
+    }
+
+    .warn-text {
+      margin-top: 0.2rem;
+      color: $color-burgundy;
+      font-weight: 600;
+
+    }
+
+    p {
+      line-height: 1.4;
+    }
+
+    .form-group {
+      margin-top: 1.2rem;
+      text-align: start;
+
+      .en {
+        margin-top: 0.2rem;
+        line-height: 1.2;
+      }
+      // 統一所有輸入框高度
+      .react-select__control {
+        min-height: 32px !important;
+        height: 32px !important;
+      }
+
+      .react-select__value-container {
+        padding: 0 0.5rem;
+      }
+
+      .react-select__indicators {
+        height: 32px;
+      }
+
+      .datepicker-full {
+        display: block;
+        width: 100%;
+      }
+
+      .flight-group {
+        margin-top: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+
+        .form-field {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+
+          label {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.3;
+            font-family:$font-en-body,$font-zh-sans;
+          }
+        }
+      }
+
+      textarea {
+        margin-top: 0.5rem;
+        font-size: 14px;
+        resize: none;
+      }
+
+      .checkbox-group {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 0.3rem;
+
+        &.vertical {
+          flex-direction: column;
+          gap: 0.1rem;
+        }
+
+        div {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.3rem;
+
+          .checkbox {
+            margin: 0;
+            margin-top: 5px;
+            height: 1rem;
+            width: 1rem;
+            flex-shrink: 0;
+            accent-color: $color-burgundy;
+          }
+
+          label {
+            margin: 0;
+            font-family:$font-en-body,$font-zh-sans;
+          }
+
+          textarea {
+            font-size: 14px;
+          }
+        }
+      }
+
+      input {
+        margin-top: 0.3rem;
+        box-sizing: border-box;
+        padding: 1rem;
+      }
+
+      span.en {
+        color: $color-charcoal;
+        font-size: 14px;
+      }
+
+      span {
+        margin-top: 0.1rem;
+        font-weight: 500;
+        font-size: 12px;
+        color: rgb(153, 57, 57);
+      }
+    }
+
+    .tour-custom {
+      margin-top: 0.5rem;
+      color: $color-ivory;
+      font-family:$font-en-body,$font-zh-sans;
+
+      .tour-link {
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 0.5rem;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        color: $color-ivory;
+        border-radius: 1.5rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.2rem 0.6rem;
+        display: inline-block;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $color-ivory;
+          color: $color-slate-blue;
+
+          i {
+            color: $color-slate-blue;
+            -webkit-text-stroke: 0.3px $color-slate-blue;
+          }
+        }
+
+        i {
+          font-size: 0.8rem;
+          color: $color-ivory;
+          -webkit-text-stroke: 0.3px $color-ivory;
+
+        }
+      }
+
+      .content {
+        color: $color-oxblood;
+      }
+
+      .en {
+        margin-bottom: 1rem;
+      }
+
+      .tour {
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        background-image:
+          url('https://images.unsplash.com/photo-1612863409288-c1242bd911ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-blend-mode: multiply;
+      }
+
+      .a {
+        background-color: $color-mist-blue;
+        box-shadow: 3px 3px 8px rgba(109, 128, 138, 0.5);
+      }
+
+      .b {
+        background-color: $color-plum;
+        box-shadow: 3px 3px 8px rgba(102, 83, 129, 0.5);
+      }
+    }
+
+  }
+}
+
+.react-datepicker {
+  border-radius: 8px;
+  border: 1px solid rgba($color-burgundy, 0.2);
+  font-family: $font-zh-sans;
+  overflow: hidden; // 讓圓角生效在子元素上
+
+  // 上方標題(月份/年份)
+  .react-datepicker__header {
+    background-color: rgba($color-burgundy, 0.1);
+    border-bottom: none;
+  }
+
+  // 選中的日期/時間
+  .react-datepicker__day--selected,
+  .react-datepicker__time-list-item--selected {
+    background-color: $color-burgundy !important;
+    border-radius: 4px;
+  }
+
+  // hover 效果
+  .react-datepicker__day:hover,
+  .react-datepicker__time-list-item:hover {
+    background-color: rgba($color-burgundy, 0.2);
+  }
+}
+
+// 只用 showTimeSelectOnly 時的時間清單
+.react-datepicker__time-container {
+  border-left: 1px solid rgba($color-burgundy, 0.1);
+}

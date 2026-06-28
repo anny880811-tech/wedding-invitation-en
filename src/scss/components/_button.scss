@@ -1,0 +1,57 @@
+.cover-btn {
+  background-color: $color-ivory;
+  font-size: 1rem;
+  color: $color-midnight;
+  padding: 0.5rem 1.5rem 0.8rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 20px rgba(109, 128, 138, 0.8);
+  display: inline-block;
+  cursor: pointer;
+  margin: 0;
+
+  .color {
+    color: $color-midnight !important;
+    margin: 0 !important;
+    line-height: 1.1;
+    font-size: 1rem !important;
+  }
+
+  &:hover {
+    background-color: #b5bdc6;
+  }
+}
+
+.form-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: $color-burgundy;
+  font-family: $font-en-serif, $font-zh-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: $color-ivory;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1.6rem;
+}
+
+.wish-btn {
+  // background-color: rgba($color-mist-blue,0.8);
+  background-color: $color-burgundy;
+  font-size: 1rem;
+  color: $color-ivory;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 10px rgba(109, 128, 138, 0.3);
+
+  &:hover {
+    background-color: #8e4752;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}

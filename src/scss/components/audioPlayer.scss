@@ -1,0 +1,29 @@
+.audio-btn {
+  position: fixed;
+  bottom: 1.2%;
+  right: 1.2%;
+  z-index: 999;
+  border: none;
+  outline: none; // ← 加這個
+  box-shadow: none;
+  background: none;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  i {
+    color: rgba($color-mist-blue, 0.5);
+    outline: none;
+  }
+}

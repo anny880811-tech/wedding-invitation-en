@@ -1,0 +1,133 @@
+.travelGuide-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  background-color: $color-ivory;
+
+  .card-container {
+    text-align: start;
+    margin-top: 2rem;
+    width: 100%;
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      text-align: start;
+      width: 100%;
+      // height: 5rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: none;
+      box-shadow: 3px 5px 10px rgba(109, 128, 138, 0.08);
+      overflow: hidden; // 加這行
+      width: 100%;
+      box-sizing: border-box;
+
+      .card-group {
+        text-align: center;
+        width: 100%; // 加這行
+        box-sizing: border-box;
+        display: flex; // 加這行
+        flex-direction: column; // 加這行
+        align-items: center;
+
+        .header-group {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+
+        .travel-link {
+          display: inline-block;
+          text-decoration: none;
+          margin-top: 0.5rem;
+          display: block;
+          background-color: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.8);
+          color: $color-ivory;
+          border-radius: 0.5rem;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0.4rem 1rem;
+          display: inline-block;
+          white-space: nowrap;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $color-ivory;
+            color: $color-slate-blue;
+
+            i {
+              color: $color-slate-blue;
+              -webkit-text-stroke: 0.3px $color-slate-blue;
+            }
+          }
+
+          i {
+            font-size: 1rem;
+            color: $color-ivory;
+            -webkit-text-stroke: 0.3px $color-ivory;
+
+          }
+        }
+
+        .notice {
+          margin-top: 1rem;
+          color: $color-ivory;
+          font-size: 18px;
+          font-weight: 800;
+        }
+
+        .lucide {
+          color: $color-ivory;
+          margin-right: 0.5rem;
+        }
+        h2{
+          margin: 0;
+          margin-top: 1rem;
+        }
+      }
+
+
+      h2 {
+        text-align: start;
+      }
+
+      h2,
+      p {
+        color: $color-ivory;
+      }
+    }
+
+    .cardA {
+      background-color: $color-mist-blue;
+      background-image:
+        url('https://images.unsplash.com/photo-1612863409288-c1242bd911ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-blend-mode: multiply;
+    }
+
+    .cardB {
+      background-color: $color-plum;
+      background-image:
+        url('https://images.unsplash.com/photo-1776278515581-137742180a26?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-blend-mode: multiply;
+    }
+
+    .cardC {
+      background-color: $color-burgundy;
+      background-image:
+        url('https://images.unsplash.com/photo-1776278515581-137742180a26?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-blend-mode: multiply;
+    }
+  }
+}
