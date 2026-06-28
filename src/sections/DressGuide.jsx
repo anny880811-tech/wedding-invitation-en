@@ -41,15 +41,6 @@ const DressGuide = () => {
         })}
       </div>
     </div >
-    <div className="note-custom">
-      {/* <div className="section-title">FROM OUR HEARTS</div> */}
-      <h3 className="section-header">FROM OUR HEARTS</h3>
-      {/* <h3 className="section-header">我們的心意</h3> */}
-      <div className="section-heading__divider"></div>
-      <div className="section-content">
-        <p className="en">As part of our wedding celebration, we will be delighted to cover your 3-day, 2-night accommodation, selected meals, and airport transfers.</p>
-      </div>
-    </div>
   </>)
 }
 
