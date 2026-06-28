@@ -47,6 +47,7 @@
 
     .wish-input-group {
       padding: 1rem;
+
       .wishes {
         margin-top: 1rem;
       }
@@ -54,14 +55,24 @@
 
 
 
-    textarea,
     input {
       background-color: #ffffff;
       padding-left: 0.5rem;
       box-sizing: border-box;
-          border-radius: 8px;
-          resize: none; 
-          font-size: 14px;
+      border-radius: 8px;
+      resize: none;
+      font-size: 14px;
+    }
+
+    textarea {
+      background-color: #ffffff;
+      padding-left: 0.5rem;
+      box-sizing: border-box;
+      border-radius: 8px;
+      resize: none;
+      font-size: 14px;
+      min-height: 80px; // ← 新增
+      overflow: hidden; // ← 新增
     }
 
     h5 {
@@ -138,7 +149,7 @@
 
       p {
         padding: 0.5rem;
-        line-height: 0.5;
+        line-height: 1.5;
         margin: 0;
       }
     }

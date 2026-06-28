@@ -7,6 +7,14 @@ const LeaveMessage = () => {
   const [form, setForm] = useState({ name: '', wishes: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const trackRef = useRef(null);
+  const wishesRef = useRef(null);
+
+  const autoResize = () => {
+    const el = wishesRef.current;
+    if (!el) return;
+    el.style.height = 'auto';          // 先重置，才能縮小
+    el.style.height = el.scrollHeight + 'px';
+  };
 
   useEffect(() => {
     const getWish = async () => {
@@ -70,10 +78,14 @@ const LeaveMessage = () => {
           />
           <textarea type="text"
             name=""
+            ref={wishesRef}
             value={form.wishes}
             className="wishes"
             placeholder="Leave your message..."
-            onChange={e => setForm(prev => ({ ...prev, wishes: e.target.value }))}
+            onChange={e => {
+              setForm(prev => ({ ...prev, wishes: e.target.value }))
+              autoResize();
+            }}
           />
         </div>
         <button type="submit"
