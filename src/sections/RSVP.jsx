@@ -115,7 +115,7 @@ const RSVP = () => {
       setTimeout(() => {
         rsvpRef.current?.scrollIntoView({ behavior: 'smooth' })
       }, 0)
-      console.log(JSON.stringify({ data: [pendingData] }, null, 2))
+      // console.log(JSON.stringify({ data: [pendingData] }, null, 2))
     } catch (error) {
       console.error("送出錯誤:", error.response?.data || error.message)
     } finally {
